@@ -4,8 +4,8 @@
 
 using namespace std;
 
-int candy_sampler(int n, int s, int l) {
-    int a = s * s + l, b = s, c;                     //Holds n-1 and n-2 respectively, temp is
+long candy_sampler(int n, int s, int l) {
+    long a = s * s + l, b = s, c;                     //Holds n-1 and n-2 respectively, temp is
 
     //Base Cases:
     if (n == 0) { return 0; }                       //Base Case for 0 == 0
@@ -13,7 +13,7 @@ int candy_sampler(int n, int s, int l) {
     if (n == 2) { return s * s + l; }               //Base Case for 2 == s^2 + l
 
     //Iterative DP
-    for (int i = 3; i < n; ++i) {
+    for (int i = 3; i <= n; ++i) {
         c = s * a + l * b;                          //c  = recurence
         b = a;                                      //Old n-1 = New n-1
         a = c;                                      //Old n = New n
