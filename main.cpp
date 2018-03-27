@@ -5,12 +5,12 @@
 using namespace std;
 
 int candy_sampler(int n, int s, int l) {
-    int a = s ^2 + l, b = s, c;                     //Holds n-1 and n-2 respectively, temp is
+    int a = s * s + l, b = s, c;                     //Holds n-1 and n-2 respectively, temp is
 
     //Base Cases:
     if (n == 0) { return 0; }                       //Base Case for 0 == 0
     if (n == 1) { return s; }                       //Base Case for 1 == 1
-    if (n == 2) { return s ^ 2 + l; }               //Base Case for 2 == s^2 + l
+    if (n == 2) { return s * s + l; }               //Base Case for 2 == s^2 + l
 
     //Iterative DP
     for (int i = 3; i < n; ++i) {
