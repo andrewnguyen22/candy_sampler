@@ -26,12 +26,13 @@ int main() {
     ifstream file("input.txt");                     //Reads from input file
     ofstream ofile("output.txt");                   //Output File
     string line;                                    //Line of the file
-    int n, s, l, i = -1;                            //Indicates the number of problem instances
-    while (getline(file, line)) {                   //Get Each Line
+    int n, s, l, x;                                 //Indicates the number of problem instances
+    getline(file, line);                            //Get the first line
+    stringstream firstline(line);                   //Convert it to a string
+    firstline >> x;                                 //Save it for loop var
+    for (int i = 0; i < x; ++i) {                   //Run through all of the inputs
+        getline(file, line);
         stringstream stream(line);                  //Read input file as stream
-        ++i;                                        //Iteration count
-        if (i == 0)                                 //Discard First Line of File
-            continue;
         stream >> n >> s >> l;                      //Store in variables n, s, and l
         ofile << candy_sampler(n, s, l) << endl;    //Call the candy sampler function
     }
