@@ -4,8 +4,8 @@
 
 using namespace std;
 
-long candy_sampler(int n, int s, int l) {
-    long a = s * s + l, b = s, c;                     //Holds n-1 and n-2 respectively, temp is
+unsigned long long candy_sampler(int n, int s, int l) {
+    unsigned long long a = s * s + l, b = s, c;     //Holds n-1 and n-2 respectively, temp is
 
     //Base Cases:
     if (n == 0) { return 0; }                       //Base Case for 0 == 0
